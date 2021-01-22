@@ -19,4 +19,8 @@ So we need a function that optimally finds the threshold to split the training s
 
 * (Issue 1) Take a look at strawman.py and deterine the requisite knowledge to tackle this problem
 
-* (Issue 2) Download and set up the IntelliJ IDE as per the instructions on the video 
+* (Issue 2) Download and set up the IntelliJ IDE as per the instructions on the video
+
+* (Issue 1) 3 Papers selected, read them.
+  * Pan Phan 2008 (both of them)
+  * Stavrovskaya, Rodionov et al 2009
