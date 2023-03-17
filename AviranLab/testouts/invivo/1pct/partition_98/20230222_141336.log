@@ -1,0 +1,396 @@
+2023-02-22 14:13 - INFO - cli : 40 - Summarizing job ... 
+
+       Input files:
+              probing: data/Manfredonia_2020/XML/datapartitions/1pct_shape/98.shape
+              fasta: /home/ashtoreth/Code/shuffle/AviranLab/data/Manfredonia_2020/XML/datapartitions/1pct_fa/98.fa
+
+       Configuration parameters:
+              log: False
+              training: True
+              scoring: False
+              k: auto
+              DOM: True
+
+       Using 2 parallel processes
+
+2023-02-22 14:13 - DEBUG - cli : 41 - Summarizing configuration:
+=========================================================
+Running patteRNA with the following parameters:
+=========================================================
+Input files:
+	probing: data/Manfredonia_2020/XML/datapartitions/1pct_shape/98.shape
+	fasta: /home/ashtoreth/Code/shuffle/AviranLab/data/Manfredonia_2020/XML/datapartitions/1pct_fa/98.fa
+
+Configuration parameters:
+	output: testouts/invivo/1pct/partition_98
+	verbose: True
+	log: False
+	no_vienna: False
+	GMM: False
+	k: -1
+	KL_div: 0.001
+	epsilon: 0.01
+	maxiter: 250
+	n_tasks: 2
+	motif: None
+	path: None
+	hairpins: False
+	posteriors: False
+	viterbi: False
+	HDSL: False
+	SPP: False
+	nan: False
+	print_nan: False
+	no_prompt: False
+	min_cscores: 1000
+	no_cscores: False
+	batch_size: 100
+	context: 40
+	training: True
+	scoring: False
+	reference: False
+	hdsl_params: (1.2, 0.5)
+=========================================================
+2023-02-22 14:13 - INFO - cli : 50 - Loading input data
+2023-02-22 14:13 - INFO - cli : 66 -  ... done in 00:00:00
+2023-02-22 14:13 - INFO - cli : 104 - Spawning training set
+2023-02-22 14:13 - INFO - Dataset : 102 -  ... sorting
+2023-02-22 14:13 - INFO - Dataset : 105 -  ... selecting
+2023-02-22 14:13 - INFO - cli : 107 -  ... done in 00:00:00
+2023-02-22 14:13 - INFO - cli : 109 - Training set summary: 
+       Passed QC                  1
+       Used transcripts           1
+       # Data points (in DOM)     300
+       KL div                     0
+2023-02-22 14:13 - INFO - TrainingManager : 104 - Training with k=6
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=6) EM iteration #1
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[0.31 0.69]
+A:
+[[0.72 0.28]
+ [0.28 0.72]]
+chi:
+[[0.11347308 0.04977929 0.05914944 0.07271507 0.08263305 0.09012118
+  0.10061264 0.33151625 0.1       ]
+ [0.33719441 0.10037166 0.09094542 0.07729861 0.06732126 0.05978832
+  0.04923407 0.11784626 0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 0: logL = -649.8
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=6) EM iteration #2
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[0.11 0.89]
+A:
+[[0.77 0.23]
+ [0.24 0.76]]
+chi:
+[[0.07038152 0.0398475  0.05196631 0.0753077  0.08863832 0.09622683
+  0.11014042 0.36749139 0.1       ]
+ [0.38321023 0.11096908 0.09856876 0.07468515 0.06104487 0.05328007
+  0.03904327 0.07919857 0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 1: logL = -599.5
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=6) EM iteration #3
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[0.02 0.98]
+A:
+[[0.82 0.18]
+ [0.19 0.81]]
+chi:
+[[0.03467374 0.02977047 0.04365838 0.07974377 0.09557768 0.10307997
+  0.11825453 0.39524147 0.1       ]
+ [0.42780757 0.12319562 0.10839696 0.06994514 0.05307287 0.04507858
+  0.0289089  0.04359436 0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 2: logL = -587.2
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=6) EM iteration #4
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[0. 1.]
+A:
+[[0.85 0.15]
+ [0.17 0.83]]
+chi:
+[[0.01597251 0.02343713 0.03689521 0.08563263 0.10073872 0.10868502
+  0.12188902 0.40674976 0.1       ]
+ [0.46003441 0.13297826 0.11784574 0.06304447 0.04605891 0.03712393
+  0.02227711 0.02063717 0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 3: logL = -574.4
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=6) EM iteration #5
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[2.75e-05 1.00e+00]
+A:
+[[0.87 0.13]
+ [0.16 0.84]]
+chi:
+[[0.0083573  0.02090012 0.03286364 0.09116611 0.10323193 0.11224519
+  0.12251708 0.40871863 0.1       ]
+ [0.47957925 0.13857337 0.1245149  0.05600302 0.04182434 0.03123276
+  0.01916215 0.0091102  0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 4: logL = -567.6
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=6) EM iteration #6
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[3.36e-07 1.00e+00]
+A:
+[[0.87 0.13]
+ [0.16 0.84]]
+chi:
+[[0.00490294 0.02003002 0.03078276 0.09515954 0.10424513 0.1144401
+  0.12241993 0.40801957 0.1       ]
+ [0.49096465 0.14142556 0.12843199 0.05063926 0.03966027 0.02734069
+  0.01769789 0.00383969 0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 5: logL = -565.1
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=6) EM iteration #7
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[2.31e-09 1.00e+00]
+A:
+[[0.87 0.13]
+ [0.16 0.84]]
+chi:
+[[0.00302258 0.01967001 0.02979305 0.09770561 0.10462957 0.11592306
+  0.12230306 0.40695305 0.1       ]
+ [0.49758838 0.14294526 0.13051415 0.0471175  0.03861487 0.02474646
+  0.01691181 0.00156156 0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 6: logL = -564.1
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=6) EM iteration #8
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[9.56e-12 1.00e+00]
+A:
+[[0.87 0.13]
+ [0.17 0.83]]
+chi:
+[[0.00189869 0.01946605 0.02939041 0.09927009 0.10474282 0.11699795
+  0.1222216  0.40601238 0.1       ]
+ [0.50155188 0.14383876 0.13153673 0.04491529 0.0381314  0.02294019
+  0.01646505 0.00062071 0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 7: logL = -563.6
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=6) EM iteration #9
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[2.45e-14 1.00e+00]
+A:
+[[0.87 0.13]
+ [0.17 0.83]]
+chi:
+[[1.20223115e-03 1.93266371e-02 2.93014961e-02 1.00231290e-01
+  1.04737970e-01 1.17801912e-01 1.22148595e-01 4.05249869e-01
+  1.00000000e-01]
+ [5.04057221e-01 1.44420057e-01 1.31982237e-01 4.35386776e-02
+  3.79192232e-02 2.16295723e-02 1.62096200e-02 2.43392221e-04
+  1.00000000e-01]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 8: logL = -563.4
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=6) EM iteration #10
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[3.92e-17 1.00e+00]
+A:
+[[0.87 0.13]
+ [0.17 0.83]]
+chi:
+[[7.64339949e-04 1.92263454e-02 2.93756932e-02 1.00830073e-01
+  1.04685705e-01 1.18412503e-01 1.22072191e-01 4.04633150e-01
+  1.00000000e-01]
+ [5.05748835e-01 1.44830055e-01 1.32122810e-01 4.26600817e-02
+  3.78327310e-02 2.06464254e-02 1.60644023e-02 9.46594297e-05
+  1.00000000e-01]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 9: logL = -563.3
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=6) EM iteration #11
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[3.97e-20 1.00e+00]
+A:
+[[0.87 0.13]
+ [0.17 0.83]]
+chi:
+[[4.87152277e-04 1.91549399e-02 2.95285058e-02 1.01210800e-01
+  1.04619195e-01 1.18881690e-01 1.21992368e-01 4.04125348e-01
+  1.00000000e-01]
+ [5.06965499e-01 1.45135765e-01 1.32107612e-01 4.20818778e-02
+  3.78012776e-02 1.98890217e-02 1.59823239e-02 3.66237814e-05
+  1.00000000e-01]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 10: logL = -563.3
+2023-02-22 14:13 - INFO - TrainingManager : 151 -  >> Log-likelihood of converged model with k=6: -5.633e+02
+2023-02-22 14:13 - INFO - TrainingManager : 71 -  >> BIC: 1.212e+03
+2023-02-22 14:13 - INFO - TrainingManager : 104 - Training with k=7
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=7) EM iteration #1
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[0.31 0.69]
+A:
+[[0.72 0.28]
+ [0.28 0.72]]
+chi:
+[[0.11337625 0.04447996 0.04634037 0.05718674 0.068378   0.07142018
+  0.07600653 0.09054163 0.33227035 0.1       ]
+ [0.33720133 0.0876314  0.07974583 0.06884334 0.0636097  0.05453625
+  0.04992617 0.04133138 0.1171746  0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 0: logL = -685.1
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=7) EM iteration #2
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[0.11 0.89]
+A:
+[[0.77 0.23]
+ [0.24 0.76]]
+chi:
+[[0.07009681 0.03741224 0.03802234 0.05716825 0.07241592 0.07585154
+  0.07925047 0.10057012 0.36921232 0.1       ]
+ [0.3828917  0.0951393  0.08845954 0.06894426 0.0594603  0.04990052
+  0.04643602 0.03076293 0.07800543 0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 1: logL = -622.5
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=7) EM iteration #3
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[0.02 0.98]
+A:
+[[0.82 0.18]
+ [0.19 0.81]]
+chi:
+[[0.0341675  0.02985258 0.02892559 0.05837668 0.07816254 0.0805063
+  0.08270204 0.10930993 0.39799684 0.1       ]
+ [0.42636694 0.10414285 0.0989554  0.06787854 0.05316605 0.04452731
+  0.04221035 0.02029925 0.04245329 0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 2: logL = -610.2
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=7) EM iteration #4
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[0. 1.]
+A:
+[[0.85 0.15]
+ [0.17 0.83]]
+chi:
+[[0.01524546 0.02487246 0.02168548 0.06128078 0.0840914  0.0834705
+  0.08556493 0.11361137 0.41017762 0.1       ]
+ [0.45740097 0.11156793 0.1087751  0.06490483 0.04595534 0.04031938
+  0.03799882 0.01324821 0.01982943 0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 3: logL = -597.4
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=7) EM iteration #5
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[3.19e-05 1.00e+00]
+A:
+[[0.86 0.14]
+ [0.16 0.84]]
+chi:
+[[0.00750054 0.02300764 0.01703525 0.06503276 0.08843764 0.08443888
+  0.08749089 0.11475048 0.41230591 0.1       ]
+ [0.47639453 0.11569228 0.11612789 0.06065045 0.04006568 0.03822008
+  0.03469246 0.00965225 0.00850437 0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 4: logL = -590.5
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=7) EM iteration #6
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[3.95e-07 1.00e+00]
+A:
+[[0.87 0.13]
+ [0.16 0.84]]
+chi:
+[[0.00405429 0.0226491  0.01417779 0.06848522 0.09120651 0.08445566
+  0.0886563  0.11485809 0.41145705 0.1       ]
+ [0.48757593 0.117519   0.12102121 0.05648126 0.03604412 0.03750171
+  0.03250958 0.00793615 0.00341103 0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 5: logL = -587.8
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=7) EM iteration #7
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[2.58e-09 1.00e+00]
+A:
+[[0.87 0.13]
+ [0.16 0.84]]
+chi:
+[[0.00227421 0.0227631  0.01238441 0.07119471 0.09293693 0.08419423
+  0.08933501 0.11476314 0.41015426 0.1       ]
+ [0.49408749 0.11823692 0.12415153 0.05309951 0.03345598 0.03739406
+  0.03118319 0.00708652 0.00130478 0.1       ]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 6: logL = -586.8
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=7) EM iteration #8
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[9.34e-12 1.00e+00]
+A:
+[[0.87 0.13]
+ [0.16 0.84]]
+chi:
+[[1.28716698e-03 2.29908595e-02 1.12221289e-02 7.31761415e-02
+  9.40141511e-02 8.39033194e-02 8.97167303e-02 1.14652248e-01
+  4.09037254e-01 1.00000000e-01]
+ [4.97915993e-01 1.18468525e-01 1.26165840e-01 5.05857289e-02
+  3.18244467e-02 3.74992270e-02 3.04072209e-02 6.64722911e-03
+  4.85790057e-04 1.00000000e-01]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 7: logL = -586.3
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=7) EM iteration #9
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[1.91e-14 1.00e+00]
+A:
+[[0.87 0.13]
+ [0.16 0.84]]
+chi:
+[[7.28264235e-04 2.32220236e-02 1.04463838e-02 7.45770113e-02
+  9.46829853e-02 8.36608182e-02 8.99230172e-02 1.14554381e-01
+  4.08205115e-01 1.00000000e-01]
+ [5.00216985e-01 1.18495361e-01 1.27491621e-01 4.87931712e-02
+  3.08014284e-02 3.76458996e-02 2.99611884e-02 6.41607417e-03
+  1.78270930e-04 1.00000000e-01]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 8: logL = -586.0
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=7) EM iteration #10
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[2.21e-17 1.00e+00]
+A:
+[[0.87 0.13]
+ [0.17 0.83]]
+chi:
+[[4.10896211e-04 2.34228525e-02 9.91640621e-03 7.55503798e-02
+  9.50985192e-02 8.34811598e-02 9.00298816e-02 1.14471641e-01
+  4.07618264e-01 1.00000000e-01]
+ [5.01631535e-01 1.18443246e-01 1.28384276e-01 4.75414102e-02
+  3.01586884e-02 3.77728871e-02 2.97066767e-02 6.29637132e-03
+  6.49083012e-05 1.00000000e-01]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 9: logL = -585.9
+2023-02-22 14:13 - DEBUG - TrainingManager : 113 - (k=7) EM iteration #11
+2023-02-22 14:13 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[1.45e-20 1.00e+00]
+A:
+[[0.87 0.13]
+ [0.17 0.83]]
+chi:
+[[2.31139737e-04 2.35855419e-02 9.54796365e-03 7.62205948e-02
+  9.53577884e-02 8.33564335e-02 9.00826384e-02 1.14402950e-01
+  4.07214950e-01 1.00000000e-01]
+ [5.02516774e-01 1.18368124e-01 1.28995960e-01 4.66768455e-02
+  2.97526359e-02 3.78663951e-02 2.95617096e-02 6.23802774e-03
+  2.35285942e-05 1.00000000e-01]]
+
+2023-02-22 14:13 - DEBUG - TrainingManager : 134 - 10: logL = -585.9
+2023-02-22 14:13 - INFO - TrainingManager : 151 -  >> Log-likelihood of converged model with k=7: -5.859e+02
+2023-02-22 14:13 - INFO - TrainingManager : 71 -  >> BIC: 1.269e+03
+2023-02-22 14:13 - INFO - TrainingManager : 75 - Optimal k=6
+2023-02-22 14:13 - INFO - cli : 125 - Training phase done in 00:00:00
+2023-02-22 14:13 - INFO - cli : 155 - Process done in 00:00:00
+2023-02-22 14:13 - INFO - cli : 156 - Output written to  -> testouts/invivo/1pct/partition_98

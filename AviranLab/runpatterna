@@ -1,0 +1,26 @@
+from subprocess import run
+
+fastas = run('ls ~/Code/shuffle/AviranLab/data/Manfredonia_2020/XML/datapartitions/1pct_fa', shell=True, capture_output=True).stdout.decode().split('\n')
+
+fastas.pop()
+
+shapes = run('ls ~/Code/shuffle/AviranLab/data/Manfredonia_2020/XML/datapartitions/1pct_shape', shell = True, capture_output = True).stdout.decode().split('\n')
+
+shapes.pop()
+
+
+fastas.sort()
+shapes.sort()
+
+"""
+for f, s in zip(fastas, shapes):
+    number = f.strip('.fa')
+    run(f'patteRNA data/Manfredonia_2020/XML/datapartitions/1pct_shape/{s} testouts/invivo/1pct/partition_{number} -v -f ~/Code/shuffle/AviranLab/data/Manfredonia_2020/XML/datapartitions/1pct_fa/{f}', shell=True)
+"""
+
+dirs = run('ls ~/Code/shuffle/AviranLab/testouts/invivo/1pct', shell = True, capture_output = True).stdout.decode().split('\n')
+dirs.pop()
+dirs.sort()
+
+for dir, s, f in zip(dirs, shapes, fastas):
+    run(f'patteRNA data/Manfredonia_2020/XML/datapartitions/1pct_shape/{s} testouts/invivo/1pct/{dir}/HDSL -v --no-prompt --model testouts/invivo/1pct/{dir}/trained_model.json --HDSL -f ~/Code/shuffle/AviranLab/data/Manfredonia_2020/XML/datapartitions/1pct_fa/{f}', shell = True, text = True, input = 'yes')

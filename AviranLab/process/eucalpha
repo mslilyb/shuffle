@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+
+import json
+import math
+import sys
+
+def oned_edist(m, p):
+    return math.sqrt((p - m) ** 2 )
+
+def twod_edist(mu, mp, pu, pp):
+    return math.sqrt((pu - mu) ** 2 + (pp - mp) ** 2)
+
+def findmax(distlist):
+    return max(distlist), distlist.index(max(distlist))
+
+def findmin(distlist):
+    return min(distlist), distlist.index(min(distlist))
+
+
+
+masterfile = sys.argv[1]
+partslist = sys.argv[2]
+
+disttypes = ['2D', 'Unpaired', 'Paired']
+
+mfp = open(masterfile)
+pfp = open(partslist)
+
+mastermodel = json.load(mfp)
+
+munpair, mpair = mastermodel['structure_model']['A'][0][0], mastermodel['structure_model']['A'][1][0]
+
+
+partfiles = pfp.readlines()
+
+twod_distances = []
+unpaired_distances = []
+paired_distances = []
+
+dirs = []
+
+for partfile in partfiles:
+    partfp = open(partfile.strip())
+    partnum = partfile.strip().split('/')[-2]
+
+    #partdir = pathlist[-2]
+
+    partmodel = json.load(partfp)
+
+    punpair, ppair = partmodel['structure_model']['A'][0][0], partmodel['structure_model']['A'][1][0]
+    twod_distances.append(twod_edist(munpair, mpair, punpair, ppair))
+    unpaired_distances.append(oned_edist(munpair, punpair))
+    paired_distances.append(oned_edist(mpair,ppair))
+    dirs.append(partnum)
+
+
+twodmax,tdmnum = findmax(twod_distances)
+unpmax, unpmnum = findmax(unpaired_distances)
+pmax, pmnum = findmax(paired_distances)
+twodmin, tdminnum = findmin(twod_distances)
+unpmin, unpminnum = findmin(unpaired_distances)
+pmin, pminnum = findmin(paired_distances)
+
+print("Maxes:")
+print("2D", twodmax, dirs[tdmnum])
+print("Unpaired", unpmax, dirs[unpmnum])
+print("Paired", pmax, dirs[pmnum])
+
+print("Mins:")
+print("2D:", twodmin, dirs[tdminnum])
+print("Unpaired:", unpmin, dirs[unpminnum])
+print("Paired:", pmin, dirs[pminnum])
+
+
+print("Results:")
+
+print(f'dir\t2D\tUnpaired\tPaired\n')
+
+for dir, twod, unp, pair in zip(dirs, twod_distances, unpaired_distances, paired_distances):
+    print(dir, twod, unp, pair)
+
+
+mfp.close()
+pfp.close()

@@ -1,0 +1,1 @@
+transcript	start score c-score BCE MEL Prob(motif) motif path seq

@@ -1,0 +1,52 @@
+2023-02-08 09:57 - INFO - cli : 40 - Summarizing job ... 
+
+       Input files:
+              probing: data/Manfredonia_2020/XML/invivo
+
+       Configuration parameters:
+              log: True
+              training: True
+              scoring: False
+              k: auto
+              GMM: True
+
+       Using 2 parallel processes
+
+2023-02-08 09:57 - DEBUG - cli : 41 - Summarizing configuration:
+=========================================================
+Running patteRNA with the following parameters:
+=========================================================
+Input files:
+	probing: data/Manfredonia_2020/XML/invivo
+
+Configuration parameters:
+	output: testouts/invivo/GMMtrain
+	verbose: True
+	log: True
+	no_vienna: False
+	GMM: True
+	k: -1
+	KL_div: 0.001
+	epsilon: 0.01
+	maxiter: 250
+	n_tasks: 2
+	motif: None
+	path: None
+	hairpins: False
+	posteriors: False
+	viterbi: False
+	HDSL: False
+	SPP: False
+	nan: False
+	print_nan: False
+	no_prompt: False
+	min_cscores: 1000
+	no_cscores: False
+	batch_size: 100
+	context: 40
+	training: True
+	scoring: False
+	reference: False
+	hdsl_params: (1.2, 0.5)
+=========================================================
+2023-02-08 09:57 - INFO - cli : 50 - Loading input data

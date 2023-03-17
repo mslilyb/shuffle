@@ -1,0 +1,38 @@
+#!/bin/ashtoreth/env python3
+
+import matplotlib.pyplot as plt
+import sys
+
+fname = sys.argv[1]
+rev = False
+flag = sys.argv[2]
+
+
+if flag == 'rev':
+    rev = True
+obs = []
+
+with open(fname, 'r') as fp:
+    while True:
+        name = fp.readline()
+        if not name: break
+        obs.append(fp.readline().strip().split(' '))
+
+revobs = []
+
+for j in range(900, 1030):
+    revobs.append(round(1 - float(obs[0][j]), 4))
+
+
+
+if rev:
+    names = [i for i in range(900, 1030)]
+    values = [revobs[j] for j in range(len(revobs))]
+
+else:
+    names = [i for i in range(900, 1030)]
+    values = [float(obs[0][j]) for j in range(900, 1030)]
+    #print(obs[0][900:1030])
+
+plt.plot(names, values)
+plt.show()
