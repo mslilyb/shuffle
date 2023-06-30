@@ -1,0 +1,74 @@
+patteRNA ~/Code/patteRNA/sample_data/weeks_set.shape piercegmmoutreference --no-vienna -vl --GMM --hairpins -f ~/Code/patteRNA/sample_data/weeks_set.fa --reference ~/Code/patteRNA/sample_data/weeks_set.dot
+INFO - Summarizing job ...
+
+       Input files:
+              probing: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.shape
+              fasta: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.fa
+              reference: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.dot
+
+       Configuration parameters:
+              log: True
+              training: True
+              scoring: True
+              k: auto
+              GMM: True
+              hairpins: True
+              motif: ({4,15}.{3,10}){4,15}
+
+       Using 2 parallel processes
+
+INFO - Loading input data
+INFO -  ... done in 00:00:00
+INFO - Using reference set
+INFO - Reference set summary:
+       Passed QC                  22
+       Used transcripts           22
+       # Data points (in GMM)     9428
+       # Unpaired Obs             4512
+       # Paired Obs               6558
+
+INFO - Training with k=1
+INFO -  >> Log-likelihood of converged model with k=1: -6.149e+03
+INFO -  >> BIC: 1.240e+04
+INFO - Training with k=2
+INFO -  >> Log-likelihood of converged model with k=2: -6.149e+03
+INFO -  >> BIC: 1.245e+04
+INFO - Optimal k=1
+INFO - Training phase done in 00:00:01
+INFO - Initiating scoring phase
+INFO - Scoring set summary:
+       Passed QC                  22
+       Used transcripts           22
+       # Data points              9428
+       # Motifs                   96
+INFO - Sampling null sites for c-score normalization
+/home/ashtoreth/anaconda3/lib/python3.9/site-packages/patteRNA-2.1-py3.9.egg/patteRNA/Transcript.py:54: RuntimeWarning: divide by zero encountered in true_divide
+  self.log_B_ratio[0, :] = np.log(self.B[0, :] / self.B[1, :])
+/home/ashtoreth/anaconda3/lib/python3.9/site-packages/patteRNA-2.1-py3.9.egg/patteRNA/Transcript.py:54: RuntimeWarning: divide by zero encountered in log
+  self.log_B_ratio[0, :] = np.log(self.B[0, :] / self.B[1, :])
+  0%|                                                                                                                                                                                                                               | 0/96 [00:00<?, ?motif/s]/home/ashtoreth/anaconda3/lib/python3.9/site-packages/patteRNA-2.1-py3.9.egg/patteRNA/ScoringManager.py:285: RuntimeWarning: divide by zero encountered in log
+  score += np.log(transcript.alpha[path[0], start] / transcript.alpha[1 - path[0], start])
+/home/ashtoreth/anaconda3/lib/python3.9/site-packages/patteRNA-2.1-py3.9.egg/patteRNA/ScoringManager.py:285: RuntimeWarning: divide by zero encountered in log
+  score += np.log(transcript.alpha[path[0], start] / transcript.alpha[1 - path[0], start])
+/home/ashtoreth/anaconda3/lib/python3.9/site-packages/numpy/core/fromnumeric.py:86: RuntimeWarning: invalid value encountered in reduce
+  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+/home/ashtoreth/anaconda3/lib/python3.9/site-packages/patteRNA-2.1-py3.9.egg/patteRNA/ScoringManager.py:285: RuntimeWarning: divide by zero encountered in double_scalars
+  score += np.log(transcript.alpha[path[0], start] / transcript.alpha[1 - path[0], start])
+/home/ashtoreth/anaconda3/lib/python3.9/site-packages/numpy/core/fromnumeric.py:86: RuntimeWarning: invalid value encountered in reduce
+  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+/home/ashtoreth/anaconda3/lib/python3.9/site-packages/patteRNA-2.1-py3.9.egg/patteRNA/ScoringManager.py:286: RuntimeWarning: invalid value encountered in double_scalars
+  score += np.sum((2 * path[1:-1] - 1) * transcript.log_B_ratio[1, start + 1:end])
+/home/ashtoreth/anaconda3/lib/python3.9/site-packages/patteRNA-2.1-py3.9.egg/patteRNA/ScoringManager.py:285: RuntimeWarning: divide by zero encountered in double_scalars
+  score += np.log(transcript.alpha[path[0], start] / transcript.alpha[1 - path[0], start])
+/home/ashtoreth/anaconda3/lib/python3.9/site-packages/patteRNA-2.1-py3.9.egg/patteRNA/ScoringManager.py:286: RuntimeWarning: invalid value encountered in double_scalars
+  score += np.sum((2 * path[1:-1] - 1) * transcript.log_B_ratio[1, start + 1:end])
+Traceback (most recent call last):
+  File "/home/ashtoreth/anaconda3/bin/patteRNA", line 33, in <module>
+    sys.exit(load_entry_point('patteRNA==2.1', 'console_scripts', 'patteRNA')())
+  File "/home/ashtoreth/anaconda3/lib/python3.9/site-packages/patteRNA-2.1-py3.9.egg/patteRNA/cli.py", line 152, in main
+    sm.execute_scoring()
+  File "/home/ashtoreth/anaconda3/lib/python3.9/site-packages/patteRNA-2.1-py3.9.egg/patteRNA/ScoringManager.py", line 100, in execute_scoring
+    params = genlogistic.fit(samples)
+  File "/home/ashtoreth/anaconda3/lib/python3.9/site-packages/scipy/stats/_distn_infrastructure.py", line 2473, in fit
+    raise RuntimeError("The data contains non-finite values.")
+RuntimeError: The data contains non-finite values.

@@ -1,0 +1,116 @@
+2023-04-27 12:22 - INFO - cli : 40 - Summarizing job ... 
+
+       Input files:
+              probing: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.shape
+              fasta: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.fa
+              reference: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.dot
+
+       Configuration parameters:
+              log: False
+              training: True
+              scoring: True
+              k: auto
+              DOM: True
+              hairpins: True
+              motif: ({4,15}.{3,10}){4,15}
+
+       Using 2 parallel processes
+
+2023-04-27 12:22 - DEBUG - cli : 41 - Summarizing configuration:
+=========================================================
+Running patteRNA with the following parameters:
+=========================================================
+Input files:
+	probing: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.shape
+	fasta: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.fa
+	reference: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.dot
+
+Configuration parameters:
+	output: ./weeksbaseline/ref
+	verbose: True
+	log: False
+	no_vienna: True
+	GMM: False
+	k: -1
+	KL_div: 0.001
+	epsilon: 0.01
+	maxiter: 250
+	n_tasks: 2
+	motif: ({4,15}.{3,10}){4,15}
+	path: None
+	hairpins: True
+	posteriors: False
+	viterbi: False
+	HDSL: False
+	SPP: False
+	nan: False
+	print_nan: False
+	no_prompt: False
+	min_cscores: 1000
+	no_cscores: False
+	batch_size: 100
+	context: 40
+	training: True
+	scoring: True
+	reference: False
+	hdsl_params: (1.2, 0.5)
+=========================================================
+2023-04-27 12:22 - INFO - cli : 50 - Loading input data
+2023-04-27 12:22 - INFO - cli : 66 -  ... done in 00:00:00
+2023-04-27 12:22 - INFO - cli : 81 - Using reference set
+2023-04-27 12:22 - INFO - cli : 85 - Reference set summary: 
+       Passed QC                  22
+       Used transcripts           22
+       # Data points (in DOM)     10690
+       # Unpaired Obs             4512
+       # Paired Obs               6558
+
+2023-04-27 12:22 - INFO - TrainingManager : 104 - Training with k=6
+2023-04-27 12:22 - DEBUG - TrainingManager : 113 - (k=6) EM iteration #1
+2023-04-27 12:22 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[0.5 0.5]
+A:
+[[0.72 0.28]
+ [0.28 0.72]]
+chi:
+[[0.11622041 0.0479321  0.05829978 0.06788503 0.08052396 0.09063061
+  0.09987357 0.33863453 0.1       ]
+ [0.33549636 0.1015435  0.09078191 0.08101582 0.07085506 0.05958078
+  0.0491378  0.11158877 0.1       ]]
+
+2023-04-27 12:22 - DEBUG - TrainingManager : 134 - 0: logL = -24017.3
+2023-04-27 12:22 - INFO - TrainingManager : 151 -  >> Log-likelihood of converged model with k=6: -2.402e+04
+2023-04-27 12:22 - INFO - TrainingManager : 71 -  >> BIC: 4.817e+04
+2023-04-27 12:22 - INFO - TrainingManager : 104 - Training with k=7
+2023-04-27 12:22 - DEBUG - TrainingManager : 113 - (k=7) EM iteration #1
+2023-04-27 12:22 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[0.51 0.49]
+A:
+[[0.72 0.28]
+ [0.28 0.72]]
+chi:
+[[0.1158136  0.04022101 0.04765943 0.0552085  0.06382837 0.07135922
+  0.07981313 0.08761866 0.33847808 0.1       ]
+ [0.33469498 0.08833491 0.08015727 0.07261014 0.06506683 0.05712912
+  0.04896265 0.04149936 0.11154474 0.1       ]]
+
+2023-04-27 12:22 - DEBUG - TrainingManager : 134 - 0: logL = -25274.2
+2023-04-27 12:22 - INFO - TrainingManager : 151 -  >> Log-likelihood of converged model with k=7: -2.527e+04
+2023-04-27 12:22 - INFO - TrainingManager : 71 -  >> BIC: 5.071e+04
+2023-04-27 12:22 - INFO - TrainingManager : 75 - Optimal k=6
+2023-04-27 12:22 - INFO - cli : 125 - Training phase done in 00:00:00
+2023-04-27 12:22 - INFO - cli : 137 - Initiating scoring phase
+2023-04-27 12:22 - INFO - cli : 140 - Scoring set summary: 
+       Passed QC                  22
+       Used transcripts           22
+       # Data points              10690
+       # Motifs                   96
+2023-04-27 12:22 - INFO - ScoringManager : 77 - Sampling null sites for c-score normalization
+2023-04-27 12:23 - INFO - ScoringManager : 112 -  ... done in 00:00:05
+2023-04-27 12:23 - INFO - ScoringManager : 124 - Executing scoring
+2023-04-27 12:23 - INFO - ScoringManager : 176 -  ... done in 00:00:01
+2023-04-27 12:23 - INFO - cli : 153 - Scoring phase done in 00:00:06
+2023-04-27 12:23 - INFO - cli : 155 - Process done in 00:00:07
+2023-04-27 12:23 - INFO - cli : 156 - Output written to  -> ./weeksbaseline/ref

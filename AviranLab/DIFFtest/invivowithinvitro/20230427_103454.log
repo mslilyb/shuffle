@@ -1,0 +1,61 @@
+2023-04-27 10:34 - INFO - cli : 40 - Summarizing job ... 
+
+       Input files:
+              probing: ./data/Manfredonia_2020/XML/invivo.shape
+              fasta: ./data/Manfredonia_2020/invivo.fa
+              model: ./DIFFtest/invitro/trained_model.json
+
+       Configuration parameters:
+              log: False
+              training: False
+              scoring: True
+              k: auto
+              DOM: True
+              hairpins: True
+              motif: ({4,15}.{3,10}){4,15}
+              posteriors: True
+              HDSL: True
+              SPP: True
+
+       Using 2 parallel processes
+
+2023-04-27 10:34 - DEBUG - cli : 41 - Summarizing configuration:
+=========================================================
+Running patteRNA with the following parameters:
+=========================================================
+Input files:
+	probing: ./data/Manfredonia_2020/XML/invivo.shape
+	fasta: ./data/Manfredonia_2020/invivo.fa
+	model: ./DIFFtest/invitro/trained_model.json
+
+Configuration parameters:
+	output: ./DIFFtest/invivowithinvitro
+	verbose: True
+	log: False
+	no_vienna: True
+	GMM: False
+	k: -1
+	KL_div: 0.001
+	epsilon: 0.01
+	maxiter: 250
+	n_tasks: 2
+	motif: ({4,15}.{3,10}){4,15}
+	path: None
+	hairpins: True
+	posteriors: True
+	viterbi: False
+	HDSL: True
+	SPP: True
+	nan: False
+	print_nan: False
+	no_prompt: False
+	min_cscores: 1000
+	no_cscores: False
+	batch_size: 100
+	context: 40
+	training: False
+	scoring: True
+	reference: False
+	hdsl_params: (1.2, 0.5)
+=========================================================
+2023-04-27 10:34 - INFO - cli : 50 - Loading input data

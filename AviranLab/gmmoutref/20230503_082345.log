@@ -1,0 +1,126 @@
+2023-05-03 08:23 - INFO - cli : 40 - Summarizing job ... 
+
+       Input files:
+              probing: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.shape
+              fasta: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.fa
+              reference: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.dot
+
+       Configuration parameters:
+              log: True
+              training: True
+              scoring: True
+              k: auto
+              GMM: True
+              hairpins: True
+              motif: ({4,15}.{3,10}){4,15}
+
+       Using 2 parallel processes
+
+2023-05-03 08:23 - DEBUG - cli : 41 - Summarizing configuration:
+=========================================================
+Running patteRNA with the following parameters:
+=========================================================
+Input files:
+	probing: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.shape
+	fasta: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.fa
+	reference: /home/ashtoreth/Code/patteRNA/sample_data/weeks_set.dot
+
+Configuration parameters:
+	output: ./gmmoutref
+	verbose: True
+	log: True
+	no_vienna: True
+	GMM: True
+	k: -1
+	KL_div: 0.001
+	epsilon: 0.01
+	maxiter: 250
+	n_tasks: 2
+	motif: ({4,15}.{3,10}){4,15}
+	path: None
+	hairpins: True
+	posteriors: False
+	viterbi: False
+	HDSL: False
+	SPP: False
+	nan: False
+	print_nan: False
+	no_prompt: False
+	min_cscores: 1000
+	no_cscores: False
+	batch_size: 100
+	context: 40
+	training: True
+	scoring: True
+	reference: False
+	hdsl_params: (1.2, 0.5)
+=========================================================
+2023-05-03 08:23 - INFO - cli : 50 - Loading input data
+2023-05-03 08:23 - INFO - cli : 66 -  ... done in 00:00:00
+2023-05-03 08:23 - INFO - cli : 81 - Using reference set
+2023-05-03 08:23 - INFO - cli : 85 - Reference set summary: 
+       Passed QC                  22
+       Used transcripts           22
+       # Data points (in GMM)     9428
+       # Unpaired Obs             4512
+       # Paired Obs               6558
+
+2023-05-03 08:23 - INFO - TrainingManager : 104 - Training with k=1
+2023-05-03 08:23 - DEBUG - TrainingManager : 113 - (k=1) EM iteration #1
+2023-05-03 08:23 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[0.37 0.63]
+A:
+[[0.71 0.29]
+ [0.2  0.8 ]]
+w:
+[[1.]
+ [1.]]
+mu:
+[[-0.78624434]
+ [-2.17751876]]
+sigma:
+[[1.5471076 ]
+ [2.06321936]]
+phi:
+[0.05 0.05]
+nu:
+[0.04186526 0.1649535 ]
+
+2023-05-03 08:23 - DEBUG - TrainingManager : 134 - 0: logL = -6148.6
+2023-05-03 08:23 - INFO - TrainingManager : 151 -  >> Log-likelihood of converged model with k=1: -6.149e+03
+2023-05-03 08:23 - INFO - TrainingManager : 71 -  >> BIC: 1.240e+04
+2023-05-03 08:23 - INFO - TrainingManager : 104 - Training with k=2
+2023-05-03 08:23 - DEBUG - TrainingManager : 113 - (k=2) EM iteration #1
+2023-05-03 08:23 - DEBUG - TrainingManager : 133 - Current model parameters
+pi:
+[0.37 0.63]
+A:
+[[0.71 0.29]
+ [0.2  0.8 ]]
+w:
+[[0.50308739 0.49691261]
+ [0.49872005 0.50127995]]
+mu:
+[[-0.98158279 -0.58847856]
+ [-2.46154297 -1.89494499]]
+sigma:
+[[1.65618209 1.26416544]
+ [2.05222102 1.67875202]]
+phi:
+[0.05 0.05]
+nu:
+[0.04186526 0.1649535 ]
+
+2023-05-03 08:23 - DEBUG - TrainingManager : 134 - 0: logL = -6148.6
+2023-05-03 08:23 - INFO - TrainingManager : 151 -  >> Log-likelihood of converged model with k=2: -6.149e+03
+2023-05-03 08:23 - INFO - TrainingManager : 71 -  >> BIC: 1.245e+04
+2023-05-03 08:23 - INFO - TrainingManager : 75 - Optimal k=1
+2023-05-03 08:23 - INFO - cli : 125 - Training phase done in 00:00:01
+2023-05-03 08:23 - INFO - cli : 137 - Initiating scoring phase
+2023-05-03 08:23 - INFO - cli : 140 - Scoring set summary: 
+       Passed QC                  22
+       Used transcripts           22
+       # Data points              9428
+       # Motifs                   96
+2023-05-03 08:23 - INFO - ScoringManager : 77 - Sampling null sites for c-score normalization
