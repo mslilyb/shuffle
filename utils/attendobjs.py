@@ -14,4 +14,10 @@ class attend:
 
 	 """
 
-	 def __init__ (self, course, quarter, weekcount, )
+	 def __init__ (self, course, quarter, weekcount, scores):
+	 	"""
+	 	Parameters:
+		-----
+	 	+ course	`str`	string containing course name
+	 	+ quarter	`str`	string containing quarter for class
+	 	+ events	`int`	
