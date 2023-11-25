@@ -1,0 +1,15 @@
+#!/bin/usr/env
+import lib.attconst
+import lib.attendio as atio
+import lib.attendobjs as atobjs
+
+atio.test()
+
+testobj = atobjs.attend("MCB 182", "FQ2023")
+
+testobj.addscore("Present", 1)
+testobj.addscore("Present", 2)
+
+print(testobj.__dict__)
+
+print
